@@ -1,1 +1,1 @@
-# java_GUI
+# JAVA GUI STUDY
