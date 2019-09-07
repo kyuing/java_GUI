@@ -3,7 +3,7 @@ package _07Color;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
-import java.beans.ConstructorProperties;
+//import java.beans.ConstructorProperties;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
