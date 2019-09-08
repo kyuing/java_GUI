@@ -54,7 +54,7 @@ public class GridLayoutTutorial {
     	   any grid size that is greater than the number of input assigns each of input at a correct location within a given grid  	   
     	   */
 		  
-		GridLayout gridLayout = new GridLayout(2,2);	//create an instance of GridLayout with a specified constructor having two parameters row and column
+		GridLayout gridLayout = new GridLayout(5,5);	//create an instance of GridLayout with a specified constructor having two parameters row and column
 		frame.setLayout(gridLayout);	//set layout into frame depending on size of row and column
 		
 		JLabel label1 = new JLabel();	//create an instance of JLabel using a default constructor in JLabel class
