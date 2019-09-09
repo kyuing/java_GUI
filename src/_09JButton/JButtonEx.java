@@ -86,23 +86,22 @@ public class JButtonEx {
 				       the process of a new value works like this; 
 				 ->    old value "1" 
 				 ->    label.setText(String.valueOf(Integer.valueOf( label.getText() + 1) ) ); in public void actionPerformed(ActionEvent e){} in ActionListener listener = new ActionListener(){};   
-				 
-				 ->    label.setText(String.valueOf(Integer.valueOf(label.getText() + 1) ) );	// new value now should be 1 and it's represented as "1"
-				 
-   			 		   after that, the value of the text of label, however, stays at zero or reset to be zero. the method work properly, but it will result in acting like appending a new value which is always 1 on the right side
-				 	   which means, 
+				 	// new value now should be 1 and it's represented as "1"
+
+        		 	       after that, the value of the text of label, however, stays at zero or reset to be zero. the method work properly, but it will result in acting like appending a new value which is always 1 on the right side
+				       which means, 
 				       1. the initial value zero at JLabel label = new JLabel("0"); could have nothing to do with the method label.setText() overridden in the instance of ActionListener class as the event happens inside the method overridden
 				       2. label.getText() returns the initial value only for the same kind of reason that there is no a getter such as a method label.getText() in the overridden method.           */	
 
 				/* Thus, there are two solution on it. */
-				//way 1: use Math.addExact(x, y) and then get the current value returned from label.getText()
+				//way 1: use Math.addExact(x, y) and then get a current running value returned by this label.setText(label.getText))
 				label.setText(String.valueOf( Math.addExact(Integer.valueOf(label.getText()), 1) ) );	 //current value + 1
 				System.out.println("The button is being clicked " + label.getText() + " time(s)");
 				
 				
-				/* way 2: we follow the given condition. we set a class-level private static int variable clicker for counting in Main class. we then increment it INSIDE the overridden method once the overridden method is invoked.
-				   we then set the current value into label by invoking the method label.setText(String.valueOf(clicker));
-				   Now, the text value of label never goes back to its initial one since we separately set a new current value which is being incremented from clicker
+				/* way 2: we follow the given condition. we then set a class-level private static int variable clicker for counting in Main class. we then increment it INSIDE the overridden method once the overridden method is invoked.
+				   we then set the current value of clicker into label by invoking the method label.setText(String.valueOf(clicker));
+				   Now, the text value of label never goes back to its initial one since we separately set a new current counting value which is being incremented from clicker
 				   In turn, those two label.setText() methods works as they do each with no a scope issue  
 				 
 				label.setText(String.valueOf(Integer.valueOf(label.getText() + 1) ) );	//the original approach given
