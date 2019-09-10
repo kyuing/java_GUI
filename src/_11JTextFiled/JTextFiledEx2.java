@@ -28,13 +28,8 @@ public class JTextFiledEx2 {
 	     * A component that is enabled may respond to user input,
 	     * while a component that is not enabled cannot respond to
 	     * user input. */
-		textField.setEnabled(true);	//true == respond to user input, false == non respond to user input
-		boolean isTrue = textField.setEnabled(true);
-		if (textField.setEnabled(true).e) {
-			
-			
-		}
-		textField.setToolTipText("text field is activated and writable");	//set a on-hover message
+		textField.setEnabled(true);	//true == respond to user input, false == non respond to user input		
+		textField.setToolTipText("text field is activated and is writable");	//set a on-hover message
 //		textField.setToolTipText("text field is not activated and not writable");	//set a on-hover message
 		
 		JLabel label = new JLabel("Enter your text on the text field below.");	//create an instance of JLabel with a specified constructor having a string parameter
